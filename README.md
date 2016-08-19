@@ -1,6 +1,8 @@
 #For 2016 COSCUP Advanced Docker Workshop
 Supports by [Katacoda](https://www.katacoda.com/) & [Microsoft Azure](https://portal.azure.com/), Thank you!!! m(_ _)m
 
+##[Slide](https://goo.gl/GH7jTa)
+
 ##Workshop Lab. List:
 1. [Docker 官方 Web 投票微服務範例](https://www.katacoda.com/docker/courses/docker2016/1)
 2. [Docker Compose & CircleCI](https://www.katacoda.com/philipz/scenarios/7)
