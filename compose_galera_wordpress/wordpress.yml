@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  wordpress:
+    image: wordpress
+    networks:
+      - mysql
+    environment:
+      - WORDPRESS_DB_HOST=slave:3306
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=PASSWORD
+    ports:
+      - "80:80"
+
+networks:
+  mysql:

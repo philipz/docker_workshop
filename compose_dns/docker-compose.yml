@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+   webapp:
+       image: philipz/minimal
+
+   webproxy:
+       build: webproxy
+       ports:
+        - "80:80"

@@ -1,0 +1,12 @@
+{
+  "name": "minimal_docker",
+  "version": "1.0.0",
+  "description": "For COSCUP 2016 Docker Advanced Workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Philipz",
+  "license": "ISC"
+}

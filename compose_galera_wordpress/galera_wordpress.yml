@@ -1,0 +1,37 @@
+version: "2"
+
+services:
+  master:
+    image: erkules/galera:basic
+    container_name: master
+    volumes:
+      - /data:/var/lib/mysql
+    networks:
+      - mysql
+    command: --wsrep-cluster-name=local-test --wsrep-cluster-address=gcomm://
+
+  slave:
+    depends_on:
+      - master
+    image: erkules/galera:basic
+    networks:
+      - mysql
+    command: --wsrep-cluster-name=local-test --wsrep-cluster-address=gcomm://master
+
+  wordpress:
+    depends_on:
+      - slave
+    image: wordpress
+    networks:
+      - mysql
+      - proxy
+    environment:
+      - WORDPRESS_DB_HOST=slave:3306
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=PASSWORD
+    ports:
+      - "80:80"
+
+networks:
+  mysql:
+  proxy:

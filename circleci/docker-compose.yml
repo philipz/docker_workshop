@@ -1,0 +1,24 @@
+version: "2"
+
+services:
+  vote:
+    image: philipz/votingapp_vote
+    command: python app.py
+    ports:
+      - "5000:80"
+
+  redis:
+    image: redis:alpine
+    ports: ["6379"]
+
+  worker:
+    image: philipz/votingapp_worker
+
+  db:
+    image: postgres:9.4
+
+  result:
+    image: philipz/votingapp_result
+    ports:
+      - "80:80"
+      - "5858:5858"
